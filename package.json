@@ -1,0 +1,49 @@
+{
+  "name": "puber-server",
+  "version": "1.0.0",
+  "description": "Uber-server clone",
+  "main": "index.js",
+  "repository": "https://github.com/JuYoungPark1/puber-server.git",
+  "author": "qkrwndud1994@naver.com",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "class-validator": "^0.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.4",
+    "helmet": "^3.15.1",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "merge-graphql-schemas": "^1.5.8",
+    "morgan": "^1.9.1",
+    "pg": "^7.10.0",
+    "twilio": "^3.39.2",
+    "typeorm": "^0.2.22"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/bcrypt-nodejs": "^0.0.30",
+    "@types/cors": "^2.8.4",
+    "@types/helmet": "^0.0.43",
+    "@types/jsonwebtoken": "^8.3.6",
+    "@types/mailgun-js": "^0.22.3",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^11.10.5",
+    "@types/twilio": "^2.11.0",
+    "babel-runtime": "^6.26.0",
+    "gql-merge": "^0.0.6",
+    "graphql-to-typescript": "^0.1.2",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.5.4",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "predev": "yarn run types",
+    "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
+    "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
+    "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
+  }
+}

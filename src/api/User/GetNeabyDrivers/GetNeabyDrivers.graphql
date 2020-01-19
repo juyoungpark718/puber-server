@@ -1,0 +1,9 @@
+type GetNeabyDriversResponse {
+  ok: Boolean!
+  error: String
+  drivers: [User]
+}
+
+type Query {
+  GetNeabyDrivers: GetNeabyDriversResponse!
+}
